@@ -7,7 +7,8 @@ from tqdm import tqdm
 
 # Set up the Google Sheets API credentials
 scope = ['https://www.googleapis.com/auth/spreadsheets']
-creds = ServiceAccountCredentials.from_json_keyfile_name(f'{os.getcwd()}\creds.json', scope)
+path = (os.path.join(os.getcwd(), 'creds.json'))
+creds = ServiceAccountCredentials.from_json_keyfile_name(path, scope)
 client = gspread.authorize(creds)
 
 # Loop through each tag in the data
